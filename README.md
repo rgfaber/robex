@@ -26,4 +26,3 @@ Being a total newbie at erlang and elixir, I will first try to implement this in
 - [Elixir School](https://elixirschool.com/)
 - [BEAM Project Structure](https://github.com/inaka/erlang_guidelines/issues/30)
 
-
