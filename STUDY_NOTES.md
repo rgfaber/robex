@@ -29,15 +29,12 @@ Based on: **Elixir in Action** (2nd ed.)
 +----------+       
 |   BEAM   |
 +----------+       
-  |     +----------+      
-  +-many| CPU Core |
-        +----------+      
-          |    +-------------+       
-          +-one|  Scheduler  |
-               +-------------+       
-                 |       +-----------+
-                 +---many|  Process  |
-                         +-----------+
+  |     +-----------+     +-----------+ 
+  +-many| Scheduler |--one|    Core   |
+        +-----------+     +-----------+         
+                 |        +-----------+
+                 +----many|  Process  |
+                          +-----------+
 ```
 BEAM = **B**ogdan/Bjorns **E**rlang **A**bstract **M**achine
 
