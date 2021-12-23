@@ -24,3 +24,6 @@ robex-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+# bytecode
+*.beam

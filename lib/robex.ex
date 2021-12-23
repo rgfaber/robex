@@ -12,19 +12,20 @@ defmodule Robex do
       :world
 
   """
-  def hello, do:  :world
-  
+  def hello, do: :world
+
   def run(N) do
-    start_robot(N)
+    case start_robot(N) do
+      {:all_started, msg} -> IO.puts(msg)
+    end
   end
-  
-  
+
   def start_robot(N) do
-    if N==0 do
-      "All robots Started."      
+    if N == 0 do
+      "All robots Started."
     end
     pid = spawn(fn -> Robex.Robot.move(N, 1, 1) end)
-    start_robot(N-1)
+    start_robot(N - 1)
   end
 
 end

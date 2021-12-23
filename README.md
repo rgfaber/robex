@@ -3,16 +3,16 @@
 ## Table of Contents
 
 - [Robex](#robex)
-  - [Table of Contents](#table-of-contents)
-  - [Introduction](#introduction)
-  - [Motivation](#motivation)
-  - [References](#references)
+    - [Table of Contents](#table-of-contents)
+    - [Introduction](#introduction)
+    - [Motivation](#motivation)
+    - [References](#references)
 
 ## Introduction
 
-Maybe you remember your very first programming lesson. For me, it was an exercise called 'Robby the Robot' and the requirement was to make a robot move along a grid, from point A to B, using the commands WEST, EAST, SOUTH, NORTH.
-Being a total newbie at erlang and elixir, I will first try to implement this in erlang, and see where it brings us.
-
+Maybe you remember your very first programming lesson. For me, it was an exercise called 'Robby the Robot' and the
+requirement was to make a robot move along a grid, from point A to B, using the commands WEST, EAST, SOUTH, NORTH. Being
+a total newbie at erlang and elixir, I will first try to implement this in erlang, and see where it brings us.
 
 ## Motivation
 

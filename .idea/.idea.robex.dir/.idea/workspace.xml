@@ -5,17 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea828a50-61f3-46ef-b6f9-94f9e1efbd3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Elixir.Robex.Robot.beam" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Elixir.Robex.beam" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/quadratic.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/robex.robot.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/robex.code-workspace" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/quadratic_test.exs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/robot_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/extraction.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/geometry.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/looping.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robex.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/extraction_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/geometry_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/looping_test.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/robex.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/robex.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Elixir.Robex.Robot.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Elixir.Robex.beam" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/STUDY_NOTES.md" beforeDir="false" afterPath="$PROJECT_DIR$/STUDY_NOTES.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quadratic.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quadratic.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/robex.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/robex.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/robex.robot.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/robex.robot.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/quadratic_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/quadratic_test.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/robex_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/robex_test.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/robot_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/robot_test.exs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +65,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="language.elixir" />
+    <property name="settings.editor.selected.configurable" value="language.elixir.sdks.elixir" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -73,6 +81,11 @@
       <workItem from="1639419256601" duration="7940000" />
       <workItem from="1639559723744" duration="650000" />
       <workItem from="1639633575183" duration="9374000" />
+      <workItem from="1639734666716" duration="11347000" />
+      <workItem from="1640019753771" duration="8768000" />
+      <workItem from="1640110532474" duration="8886000" />
+      <workItem from="1640200813840" duration="3789000" />
+      <workItem from="1640205864097" duration="5237000" />
     </task>
     <servers />
   </component>
