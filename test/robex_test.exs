@@ -6,5 +6,5 @@ defmodule RobexTest do
     assert Robex.hello() == :world
   end
 
-  
+
 end

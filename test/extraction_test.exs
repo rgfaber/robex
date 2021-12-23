@@ -1,9 +1,9 @@
 defmodule Extraction.Tests do
   use ExUnit.Case, async: true
 
-  
+
   doctest Extraction
-  
+
   test "Extract Email from valid map" do
     valid_map = %{
       "email" => "jim.doe@erlef.org",
@@ -19,9 +19,9 @@ defmodule Extraction.Tests do
       "login" => "",
       "name" => "rafael"
     }
-    assert Extraction.extract_email(no_mail_map) == {:error, "Email missing"}    
+    assert Extraction.extract_email(no_mail_map) == {:error, "Email missing"}
   end
-  
+
   test "Extract login from valid map" do
     valid_map = %{
       "email" => "jim.doe@erlef.org",
@@ -30,23 +30,23 @@ defmodule Extraction.Tests do
     }
     assert Extraction.extract_login(valid_map) == {:login, "rlef"}
   end
-  
+
   test "Extract login default clause" do
     no_login_map = %{
       "name" => "rafael"
     }
     assert Extraction.extract_login(no_login_map) == {:error, "Login missing"}
   end
-  
+
   test "Extract Name from valid map" do
     valid_map = %{
       "email" => "jim.doe@erlef.org",
       "login" => "rlef",
       "name" => "rafael"
     }
-    assert Extraction.extract_name(valid_map) == {:name, "rafael"}    
+    assert Extraction.extract_name(valid_map) == {:name, "rafael"}
   end
-  
+
   test "Extract name default clause" do
     no_name_map = %{
       "email" => "jim.doe@erlef.org",
@@ -54,7 +54,7 @@ defmodule Extraction.Tests do
     }
     assert Extraction.extract_name(no_name_map) == {:error, "Name missing"}
   end
-  
+
   test "Extract user from valid map" do
     valid_map = %{
       "email" => "jim.doe@erlef.org",
@@ -63,9 +63,9 @@ defmodule Extraction.Tests do
     }
     assert Extraction.extract_user(valid_map) == ["rafael", "rlef", "jim.doe@erlef.org"]
   end
-  
 
-#  Indeed it returns "Name Missing"
+
+  #  Indeed it returns "Name Missing"
   test "Extract user from invalid_map" do
     invalid_map = %{
       "email" => "jim.doe@erlef.org",
@@ -73,18 +73,27 @@ defmodule Extraction.Tests do
     }
     assert Extraction.extract_user(invalid_map) == {:error, "Name missing"}
   end
-  
+
   test "Extract user for empty map" do
     empty_map = %{}
     assert Extraction.extract_user(empty_map) == {:error, "Login missing"} ## this should fail first
   end
-  
-  test "Sweet tastes good" do
+
+  test "Sweet tastes great" do
     assert Extraction.sweet() == :tastes_great
   end
-  
 
-  
+
+  test "Test if user extraction using enum returns missing fields" do
+    no_login_map = %{
+      "name" => "rafael"
+    }
+    {res, _} = Extraction.extract_user_using_enum(no_login_map)
+    assert res == :error
+  end
+
+
+
   ## Study recap:
   ## What we did: 
   ## 1) wrote tests for extract_email, extract_name and extract_login DEFAULT cases
@@ -95,6 +104,6 @@ defmodule Extraction.Tests do
   ## 6) implemented extract_user
   ## 7) wrote test for invalid input
   ## 8) test succeeded.
-  
-  
+
+
 end
