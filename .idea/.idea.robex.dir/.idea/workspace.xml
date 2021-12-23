@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea828a50-61f3-46ef-b6f9-94f9e1efbd3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/streams.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/streams_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bible.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/big_file.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/big_file_test.exs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/robex.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/robex.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/extraction.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/extraction.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/geometry.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/geometry.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/looping.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/looping.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quadratic.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quadratic.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/extraction_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/extraction_test.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/geometry_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/geometry_test.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/looping_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/looping_test.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/robex_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/robex_test.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/streams.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/streams.ex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +73,7 @@
       <workItem from="1640200813840" duration="3789000" />
       <workItem from="1640205864097" duration="23330000" />
       <workItem from="1640267989682" duration="7610000" />
-      <workItem from="1640292508280" duration="3586000" />
+      <workItem from="1640292508280" duration="8781000" />
     </task>
     <servers />
   </component>

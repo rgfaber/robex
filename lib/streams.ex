@@ -21,7 +21,6 @@ defmodule Streams do
       |> Stream.map(&( {&1, :math.sqrt(&1)} ))
       |> Enum.to_list()
     end
-    
   end
   
 
