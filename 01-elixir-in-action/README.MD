@@ -1,4 +1,4 @@
-# This is the study output from studying the book 'Elixir in Action'
+# This is the output from studying the book 'Elixir in Action'
 
 ## Test-driven learning
 We shall write tests first for every example in the book.
