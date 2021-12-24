@@ -11,6 +11,10 @@ defmodule Fraction.Tests do
     assert bb == 5
   end
   
+  test "Test that we can get the value from the Fraction with value/1" do
+    assert Fraction.value(%Fraction{a: 4, b: 8}) != nil
+  end
+  
   
   
 end
