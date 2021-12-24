@@ -6,7 +6,10 @@ We shall write tests first for every example in the book.
 ## Tooling
 
 ### mix test.watch
-mix test.watch is an valuable extension if you want to practice TDD.
+
+[mix.test @github](https://github.com/lpil/mix-test.watch)
+
+***mix test.watch*** is a must-have  extension if you want to practice TDD.
 In order to enable mix test.watch, we had to include in **mix.exs**
 ```elixir
   defp deps do
