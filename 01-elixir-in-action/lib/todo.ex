@@ -1,9 +1,7 @@
 defmodule ToDo do
-  def new(), do: %{}
-  def add_entry(list, date, title),
-      do: list
-          |> Map.update(date, [title], &([title | &1]))
+  def new(), do: MultiDict.new()
+  def add_entry(list, entry),
+      do: MultiDict.add(list,entry.date, entry)
   def entries(list, date),
-      do: list
-          |> Map.get(date, [])
+      do: MultiDict.get(list,date)
 end
