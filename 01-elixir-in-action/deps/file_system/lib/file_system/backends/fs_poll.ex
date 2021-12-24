@@ -67,33 +67,43 @@ defmodule FileSystem.Backends.FSPoll do
   end
 
   defp files_mtimes(dirs, files_mtimes_map \\ %{}) do
-    Enum.reduce(dirs, files_mtimes_map, fn dir, map ->
-      case File.stat!(dir) do
-        %{type: :regular, mtime: mtime} ->
-          Map.put(map, dir, mtime)
-        %{type: :directory} ->
-          dir
-          |> Path.join("*")
-          |> Path.wildcard
-          |> files_mtimes(map)
-        %{type: _other} ->
-          map
+    Enum.reduce(
+      dirs,
+      files_mtimes_map,
+      fn dir, map ->
+        case File.stat!(dir) do
+          %{type: :regular, mtime: mtime} ->
+            Map.put(map, dir, mtime)
+          %{type: :directory} ->
+            dir
+            |> Path.join("*")
+            |> Path.wildcard
+            |> files_mtimes(map)
+          %{type: _other} ->
+            map
+        end
       end
-    end)
+    )
   end
 
   @doc false
   def diff(stale_mtimes, fresh_mtimes) do
-    fresh_file_paths = fresh_mtimes |> Map.keys |> MapSet.new
-    stale_file_paths = stale_mtimes |> Map.keys |> MapSet.new
+    fresh_file_paths = fresh_mtimes
+                       |> Map.keys
+                       |> MapSet.new
+    stale_file_paths = stale_mtimes
+                       |> Map.keys
+                       |> MapSet.new
 
     created_file_paths =
-      MapSet.difference(fresh_file_paths, stale_file_paths) |> MapSet.to_list
+      MapSet.difference(fresh_file_paths, stale_file_paths)
+      |> MapSet.to_list
     deleted_file_paths =
-      MapSet.difference(stale_file_paths, fresh_file_paths) |> MapSet.to_list
+      MapSet.difference(stale_file_paths, fresh_file_paths)
+      |> MapSet.to_list
     modified_file_paths =
       for file_path <- MapSet.intersection(stale_file_paths, fresh_file_paths),
-        stale_mtimes[file_path] != fresh_mtimes[file_path], do: file_path
+          stale_mtimes[file_path] != fresh_mtimes[file_path], do: file_path
 
     {created_file_paths, deleted_file_paths, modified_file_paths}
   end

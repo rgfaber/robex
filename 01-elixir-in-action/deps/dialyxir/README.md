@@ -17,6 +17,7 @@ specify 0.5 in your mix deps.
 Warning messages have been greatly improved, but are filtered through the legacy formatter to support your existing
 ignore files. You can optionally use the new Elixir [term format](#elixir-term-format) for ignore files. You may want to
 use the `--format short` argument in your CI pipelines. There are several formats, also there is a new `explain` feature
+
 - for details see CLI [options](#command-line-options).
 
 ## Quickstart

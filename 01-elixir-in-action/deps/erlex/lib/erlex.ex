@@ -578,7 +578,8 @@ defmodule Erlex do
            fn {_, v} ->
              v
              |> atomize()
-             |> String.trim_leading(":") end
+             |> String.trim_leading(":")
+           end
          )
 
     printed_whens = pretty_names

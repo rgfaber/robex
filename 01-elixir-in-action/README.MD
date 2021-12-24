@@ -1,6 +1,7 @@
 # This is the output from studying the book 'Elixir in Action'
 
 ## Test-driven learning
+
 We shall write tests first for every example in the book.
 
 ## Tooling
@@ -9,8 +10,9 @@ We shall write tests first for every example in the book.
 
 [mix.test @github](https://github.com/lpil/mix-test.watch)
 
-***mix test.watch*** is a must-have  extension if you want to practice TDD.
-In order to enable mix test.watch, we had to include in **mix.exs**
+***mix test.watch*** is a must-have extension if you want to practice TDD. In order to enable mix test.watch, we had to
+include in **mix.exs**
+
 ```elixir
   defp deps do
     [
@@ -21,7 +23,9 @@ In order to enable mix test.watch, we had to include in **mix.exs**
     ]
   end
 ```
-#### NOTE: do not forget to run 
+
+#### NOTE: do not forget to run
+
 ```shell
 $ mix deps.get
 ```

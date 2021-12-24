@@ -35,7 +35,6 @@ defmodule Excellent.Mixfile do
 end
 ```
 
-
 ### Subscription API
 
 You can spawn a worker and subscribe to events from it:
@@ -57,7 +56,9 @@ The pid you subscribed from will now receive messages like
 ```
 {:file_event, worker_pid, {file_path, events}}
 ```
+
 and
+
 ```
 {:file_event, worker_pid, :stop}
 ```
@@ -89,7 +90,6 @@ defmodule Watcher do
   end
 end
 ```
-
 
 ## Tweaking behaviour via extra arguments
 

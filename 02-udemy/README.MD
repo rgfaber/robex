@@ -1,4 +1,4 @@
-# This is study material from the udemy course 
+# This is study material from the udemy course
 
 ## Reference
 

@@ -8,15 +8,15 @@ defmodule MixTestWatch.Path do
   @elixir_source_endings ~w(.erl .ex .exs .eex .leex .heex .xrl .yrl .hrl)
   @ignored_dirs ~w(deps/ _build/)
 
-  #
-  # Public API
-  #
+                  #
+                  # Public API
+                  #
 
   @spec watching?(MixTestWatch.Config.t(), String.t()) :: boolean
 
   def watching?(path, config \\ %Config{}) do
     watched_directory?(path) and elixir_extension?(path, config.extra_extensions) and
-      not excluded?(config, path)
+    not excluded?(config, path)
   end
 
   #

@@ -17,7 +17,7 @@ defmodule FileSystem.Worker do
     {backend, rest} = Keyword.pop(args, :backend)
     with {:ok, backend} <- FileSystem.Backend.backend(backend),
          {:ok, backend_pid} <- backend.start_link([{:worker_pid, self()} | rest])
-    do
+      do
       {:ok, %{backend_pid: backend_pid, subscribers: %{}}}
     else
       _ -> :ignore
@@ -32,10 +32,13 @@ defmodule FileSystem.Worker do
   end
 
   @doc false
-  def handle_info({:backend_file_event, backend_pid, file_event}, %{backend_pid: backend_pid}=state) do
-    state.subscribers |> Enum.each(fn {_ref, subscriber_pid} ->
-      send(subscriber_pid, {:file_event, self(), file_event})
-    end)
+  def handle_info({:backend_file_event, backend_pid, file_event}, %{backend_pid: backend_pid} = state) do
+    state.subscribers
+    |> Enum.each(
+         fn {_ref, subscriber_pid} ->
+           send(subscriber_pid, {:file_event, self(), file_event})
+         end
+       )
     {:noreply, state}
   end
 

@@ -67,7 +67,8 @@ defmodule Dialyxir.Project do
       |> Enum.filter(
            fn {file_name, _path} ->
              beam_files
-             |> Map.has_key?(file_name) end
+             |> Map.has_key?(file_name)
+           end
          )
       |> Map.new()
 

@@ -11,8 +11,7 @@ Changelog
 
 ## v1.0.2 - 2019-11-17
 
-- Zombie killer script is run with bash to avoid platform specific issues with
-  sh implementations.
+- Zombie killer script is run with bash to avoid platform specific issues with sh implementations.
 
 ## v1.0.1 - 2019-10-25
 
@@ -55,13 +54,11 @@ Changelog
 
 ## v0.3.3 - 2017-02-08
 
-- Fixed a bug where arguments were not being correctly passed to the
-  test running BEAM instance.
+- Fixed a bug where arguments were not being correctly passed to the test running BEAM instance.
 
 ## v0.3.1 - 2017-02-04
 
-- Fixed race condition bug on OSX where tests would fail to run when
-  files are changed.
+- Fixed race condition bug on OSX where tests would fail to run when files are changed.
 
 ## v0.3.0 - 2017-01-29
 
@@ -70,9 +67,8 @@ Changelog
 - Paths can be ignored by watcher (Alex Myasoedov @msoedov)
 - Ability to specify additional watched file extensions. (Dave Shah @daveshah)
 - Erlang `.hrl` header files are now watched.
-- The existing VM can now reused for running the tests with the HotRunner.
-  This gives us Windows support and a performance increase.
-  Sadly it cannot be used as the default due to a bug in the Elixir compiler.
+- The existing VM can now reused for running the tests with the HotRunner. This gives us Windows support and a
+  performance increase. Sadly it cannot be used as the default due to a bug in the Elixir compiler.
 
 ## v0.2.6 - 2016-02-28
 

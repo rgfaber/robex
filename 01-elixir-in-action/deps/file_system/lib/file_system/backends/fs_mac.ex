@@ -53,9 +53,27 @@ defmodule FileSystem.Backends.FSMac do
   end
 
   def known_events do
-    [ :mustscansubdirs, :userdropped, :kerneldropped, :eventidswrapped, :historydone,
-      :rootchanged, :mount, :unmount, :created, :removed, :inodemetamod, :renamed, :modified,
-      :finderinfomod, :changeowner, :xattrmod, :isfile, :isdir, :issymlink, :ownevent,
+    [
+      :mustscansubdirs,
+      :userdropped,
+      :kerneldropped,
+      :eventidswrapped,
+      :historydone,
+      :rootchanged,
+      :mount,
+      :unmount,
+      :created,
+      :removed,
+      :inodemetamod,
+      :renamed,
+      :modified,
+      :finderinfomod,
+      :changeowner,
+      :xattrmod,
+      :isfile,
+      :isdir,
+      :issymlink,
+      :ownevent,
     ]
   end
 
@@ -91,7 +109,11 @@ defmodule FileSystem.Backends.FSMac do
         Logger.error "required argument `dirs` is missing"
         {:error, :missing_dirs_argument}
       {dirs, rest} ->
-        args = ['-F' | dirs |> Enum.map(&Path.absname/1) |> Enum.map(&to_charlist/1)]
+        args = [
+          '-F' | dirs
+                 |> Enum.map(&Path.absname/1)
+                 |> Enum.map(&to_charlist/1)
+        ]
         parse_options(rest, args)
     end
   end
@@ -152,18 +174,19 @@ defmodule FileSystem.Backends.FSMac do
     end
   end
 
-  def handle_info({port, {:data, {:eol, line}}}, %{port: port}=state) do
-    {file_path, events} = line |> parse_line
+  def handle_info({port, {:data, {:eol, line}}}, %{port: port} = state) do
+    {file_path, events} = line
+                          |> parse_line
     send(state.worker_pid, {:backend_file_event, self(), {file_path, events}})
     {:noreply, state}
   end
 
-  def handle_info({port, {:exit_status, _}}, %{port: port}=state) do
+  def handle_info({port, {:exit_status, _}}, %{port: port} = state) do
     send(state.worker_pid, {:backend_file_event, self(), :stop})
     {:stop, :normal, state}
   end
 
-  def handle_info({:EXIT, port, _reason}, %{port: port}=state) do
+  def handle_info({:EXIT, port, _reason}, %{port: port} = state) do
     send(state.worker_pid, {:backend_file_event, self(), :stop})
     {:stop, :normal, state}
   end
@@ -173,8 +196,15 @@ defmodule FileSystem.Backends.FSMac do
   end
 
   def parse_line(line) do
-    [_, _, events, path] = line |> to_string |> String.split(["\t", "="], parts: 4)
-    {path, events |> String.split(["[", ",", "]"], trim: true) |> Enum.map(&String.to_existing_atom/1)}
+    [_, _, events, path] = line
+                           |> to_string
+                           |> String.split(["\t", "="], parts: 4)
+    {
+      path,
+      events
+      |> String.split(["[", ",", "]"], trim: true)
+      |> Enum.map(&String.to_existing_atom/1)
+    }
   end
 
 end

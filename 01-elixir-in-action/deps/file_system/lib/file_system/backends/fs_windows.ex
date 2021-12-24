@@ -78,10 +78,18 @@ defmodule FileSystem.Backends.FSWindows do
         Logger.error "required argument `dirs` is missing"
         {:error, :missing_dirs_argument}
       {dirs, rest} ->
-        format = ["%w", "%e", "%f"] |> Enum.join(@sep_char) |> to_charlist
+        format = ["%w", "%e", "%f"]
+                 |> Enum.join(@sep_char)
+                 |> to_charlist
         args = [
-          '--format', format, '--quiet', '-m', '-r'
-          | dirs |> Enum.map(&Path.absname/1) |> Enum.map(&to_charlist/1)
+          '--format',
+          format,
+          '--quiet',
+          '-m',
+          '-r'
+          | dirs
+            |> Enum.map(&Path.absname/1)
+            |> Enum.map(&to_charlist/1)
         ]
         parse_options(rest, args)
     end
@@ -123,18 +131,19 @@ defmodule FileSystem.Backends.FSWindows do
     end
   end
 
-  def handle_info({port, {:data, {:eol, line}}}, %{port: port}=state) do
-    {file_path, events} = line |> parse_line
+  def handle_info({port, {:data, {:eol, line}}}, %{port: port} = state) do
+    {file_path, events} = line
+                          |> parse_line
     send(state.worker_pid, {:backend_file_event, self(), {file_path, events}})
     {:noreply, state}
   end
 
-  def handle_info({port, {:exit_status, _}}, %{port: port}=state) do
+  def handle_info({port, {:exit_status, _}}, %{port: port} = state) do
     send(state.worker_pid, {:backend_file_event, self(), :stop})
     {:stop, :normal, state}
   end
 
-  def handle_info({:EXIT, port, _reason}, %{port: port}=state) do
+  def handle_info({:EXIT, port, _reason}, %{port: port} = state) do
     send(state.worker_pid, {:backend_file_event, self(), :stop})
     {:stop, :normal, state}
   end
@@ -145,16 +154,25 @@ defmodule FileSystem.Backends.FSWindows do
 
   def parse_line(line) do
     {path, flags} =
-      case line |> to_string |> String.split(@sep_char, trim: true) do
+      case line
+           |> to_string
+           |> String.split(@sep_char, trim: true) do
         [dir, flags, file] -> {Enum.join([dir, file], "\\"), flags}
-        [path, flags]      -> {path, flags}
+        [path, flags] -> {path, flags}
       end
-    {path |> Path.split() |> Path.join(), flags |> String.split(",") |> Enum.map(&convert_flag/1)}
+    {
+      path
+      |> Path.split()
+      |> Path.join(),
+      flags
+      |> String.split(",")
+      |> Enum.map(&convert_flag/1)
+    }
   end
 
-  defp convert_flag("CREATE"),   do: :created
-  defp convert_flag("MODIFY"),   do: :modified
-  defp convert_flag("DELETE"),   do: :removed
+  defp convert_flag("CREATE"), do: :created
+  defp convert_flag("MODIFY"), do: :modified
+  defp convert_flag("DELETE"), do: :removed
   defp convert_flag("MOVED_TO"), do: :renamed
-  defp convert_flag(_),          do: :undefined
+  defp convert_flag(_), do: :undefined
 end
