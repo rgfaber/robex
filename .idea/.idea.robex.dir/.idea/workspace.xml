@@ -5,11 +5,87 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea828a50-61f3-46ef-b6f9-94f9e1efbd3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/bible.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/big_file.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/big_file_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/libraries/credo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/libraries/dialyxir.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/libraries/erlex.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/libraries/ex_doc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/libraries/excoveralls.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/.elixir_ls/build/_test/lib/robex/.mix/compile.app_tracer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/.elixir_ls/build/_test/lib/robex/.mix/compile.elixir" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/.elixir_ls/build/_test/lib/robex/.mix/compile.elixir_scm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/.elixir_ls/build/_test/lib/robex/.mix/compile.protocols" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/.elixir_ls/build/_test/lib/robex/ebin/robex.app" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/.elixir_ls/dialyzer_manifest_24.1.7_elixir-1.13.0_test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/.formatter.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/bible.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/big_file.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/data_abstractions.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/extraction.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/geometry.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/looping.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/multidict.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/quadratic.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/robex.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/robex.robot.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/streams.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/todo.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/mix.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/mix.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/robex.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/test/big_file_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/test/data_abstractions_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/test/extraction_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/test/geometry_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/test/looping_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/test/multidict_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/test/quadratic_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/test/robex_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/test/robot_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/test/streams_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/test/test_helper.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/test/todo_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02-udemy/cards/.formatter.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02-udemy/cards/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02-udemy/cards/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02-udemy/cards/lib/cards.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02-udemy/cards/mix.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02-udemy/cards/test/cards_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02-udemy/cards/test/test_helper.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/_test/lib/robex/.mix/compile.app_tracer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/_test/lib/robex/.mix/compile.elixir" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/_test/lib/robex/.mix/compile.elixir_scm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/_test/lib/robex/.mix/compile.protocols" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/_test/lib/robex/consolidated/Elixir.Collectable.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/_test/lib/robex/consolidated/Elixir.Enumerable.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/_test/lib/robex/consolidated/Elixir.IEx.Info.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/_test/lib/robex/consolidated/Elixir.Inspect.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/_test/lib/robex/consolidated/Elixir.List.Chars.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/_test/lib/robex/consolidated/Elixir.String.Chars.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/_test/lib/robex/ebin/Elixir.Robex.beam" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/_test/lib/robex/ebin/robex.app" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/dialyzer_manifest_24.1.7_elixir-1.13.0_test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.formatter.exs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/streams.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/streams.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bible.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/big_file.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/extraction.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/geometry.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/looping.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quadratic.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/robex.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/robex.robot.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/streams.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mix.exs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robex.exs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/big_file_test.exs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/extraction_test.exs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/geometry_test.exs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/looping_test.exs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/quadratic_test.exs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/robex_test.exs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/robot_test.exs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/streams_test.exs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_helper.exs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +120,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -73,7 +151,7 @@
       <workItem from="1640200813840" duration="3789000" />
       <workItem from="1640205864097" duration="23330000" />
       <workItem from="1640267989682" duration="7610000" />
-      <workItem from="1640292508280" duration="8781000" />
+      <workItem from="1640292508280" duration="23729000" />
     </task>
     <servers />
   </component>

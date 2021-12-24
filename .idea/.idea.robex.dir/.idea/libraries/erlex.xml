@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="erlex" type="mix">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/01-elixir-in-action/_build/dev/lib/erlex/ebin" />
+      <root url="file://$PROJECT_DIR$/01-elixir-in-action/_build/dev/lib/erlex/ebin" />
+      <root url="file://$PROJECT_DIR$/01-elixir-in-action/_build/dev/lib/erlex/ebin" />
+      <root url="file://$PROJECT_DIR$/01-elixir-in-action/_build/dev/lib/erlex/ebin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/01-elixir-in-action/deps/erlex/src" />
+      <root url="file://$PROJECT_DIR$/01-elixir-in-action/deps/erlex/src" />
+      <root url="file://$PROJECT_DIR$/01-elixir-in-action/deps/erlex/lib" />
+      <root url="file://$PROJECT_DIR$/01-elixir-in-action/deps/erlex/lib" />
+    </SOURCES>
+  </library>
+</component>
