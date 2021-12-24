@@ -5,58 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea828a50-61f3-46ef-b6f9-94f9e1efbd3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/00-tools/inst-elixir-tools.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/dev/dialyxir_erlang-24.1.7_elixir-1.13.0_deps-dev.plt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/dev/dialyxir_erlang-24.1.7_elixir-1.13.0_deps-dev.plt.hash" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/dialyxir/.mix/compile.app_tracer" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/dialyxir/.mix/compile.elixir" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/dialyxir/.mix/compile.elixir_scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/dialyxir/.mix/compile.fetch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/dialyxir/ebin/dialyxir.app" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/erlex/.mix/compile.app_tracer" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/erlex/.mix/compile.elixir" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/erlex/.mix/compile.elixir_scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/erlex/.mix/compile.erlang" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/erlex/.mix/compile.fetch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/erlex/ebin/erlex.app" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/02-udemy/cards/mix.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/README.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/_build/dev/lib/robex/.mix/compile.app_tracer" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/dev/lib/robex/.mix/compile.app_tracer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/_build/dev/lib/robex/.mix/compile.elixir" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/dev/lib/robex/.mix/compile.elixir" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/robex/.mix/compile.app_tracer" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/robex/.mix/compile.app_tracer" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/robex/.mix/compile.elixir" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/robex/.mix/compile.elixir" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/robex/.mix/compile.test_stale" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/robex/.mix/compile.test_stale" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/deps/dialyxir/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/deps/dialyxir/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/deps/dialyxir/lib/dialyxir/project.ex" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/deps/dialyxir/lib/dialyxir/project.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/deps/erlex/lib/erlex.ex" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/deps/erlex/lib/erlex.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/deps/file_system/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/deps/file_system/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/deps/file_system/hex_metadata.config" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/deps/file_system/hex_metadata.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/deps/file_system/lib/file_system/backend.ex" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/deps/file_system/lib/file_system/backend.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/deps/file_system/lib/file_system/backends/fs_inotify.ex" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/deps/file_system/lib/file_system/backends/fs_inotify.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/deps/file_system/lib/file_system/backends/fs_mac.ex" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/deps/file_system/lib/file_system/backends/fs_mac.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/deps/file_system/lib/file_system/backends/fs_poll.ex" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/deps/file_system/lib/file_system/backends/fs_poll.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/deps/file_system/lib/file_system/backends/fs_windows.ex" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/deps/file_system/lib/file_system/backends/fs_windows.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/deps/file_system/lib/file_system/worker.ex" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/deps/file_system/lib/file_system/worker.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/deps/file_system/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/deps/file_system/mix.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/deps/mix_test_watch/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/deps/mix_test_watch/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/deps/mix_test_watch/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/deps/mix_test_watch/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/deps/mix_test_watch/hex_metadata.config" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/deps/mix_test_watch/hex_metadata.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/deps/mix_test_watch/lib/mix_test_watch/path.ex" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/deps/mix_test_watch/lib/mix_test_watch/path.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/deps/mix_test_watch/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/deps/mix_test_watch/mix.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/lib/big_file.ex" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/big_file.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/01-elixir-in-action/lib/fraction.ex" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/fraction.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/lib/multidict.ex" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/multidict.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/lib/robex.ex" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/robex.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/lib/todo.ex" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/todo.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/mix.exs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/01-elixir-in-action/test/fraction_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/test/fraction_test.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/test/todo_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/test/todo_test.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02-udemy/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/02-udemy/README.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02-udemy/cards/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/02-udemy/cards/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02-udemy/cards/lib/cards.ex" beforeDir="false" afterPath="$PROJECT_DIR$/02-udemy/cards/lib/cards.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02-udemy/cards/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/02-udemy/cards/mix.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02-udemy/cards/test/cards_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/02-udemy/cards/test/cards_test.exs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +75,7 @@
       <workItem from="1640200813840" duration="3789000" />
       <workItem from="1640205864097" duration="23330000" />
       <workItem from="1640267989682" duration="7610000" />
-      <workItem from="1640292508280" duration="29615000" />
+      <workItem from="1640292508280" duration="32274000" />
     </task>
     <servers />
   </component>
