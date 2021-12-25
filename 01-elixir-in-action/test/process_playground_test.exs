@@ -10,8 +10,8 @@ defmodule ProcessPlayground.Test do
 #  end
   
   
-  test "Test if we can spawn 1000 processes asynchronously" do
-    Enum.map(1..250000, &ProcessPlayground.spawn_sleeper(&1))
+  test "Test if we can spawn 25 processes asynchronously" do
+    Enum.each(1..25, &ProcessPlayground.spawn_sleeper(&1))
   end
   
   

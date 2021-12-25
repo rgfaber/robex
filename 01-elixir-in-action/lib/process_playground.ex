@@ -8,7 +8,7 @@ defmodule ProcessPlayground do
   
     
   def spawn_sleeper(id) do
-    spawn(fn  -> ProcessPlayground.sleeper(id) end)
+    spawn(fn -> ProcessPlayground.sleeper(id) end)
     |> IO.inspect()
   end
   
