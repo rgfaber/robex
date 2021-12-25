@@ -7,6 +7,7 @@ defmodule ToDo.Tests do
 
   test "Test that we can add items to the ToDo list" do
     to_do()
+    |> IO.inspect()
   end
 
   defp to_do(),
@@ -36,11 +37,34 @@ defmodule ToDo.Tests do
                 title: "All Saints"
               }
             )
+         |> ToDo.add_entry(
+              %{
+                date: ~D[2021-12-25],
+                title: "Sir Isaac's Birthday"
+              }
+            )
 
 
   test "Test that we can retrieve entries from the ToDo list" do
     to_do()
     |> ToDo.entries(~D[2021-12-25])
+    |> IO.inspect()
+  end
+
+  test "Test that we can update using ToDo.update/3" do
+    todo_list = to_do()
+    new_entry = %{date: ~D[2021-10-06], title: "Birthday"}
+    new_todo = ToDo.update(todo_list, 2, &Map.put(&1, :date, new_entry.date))
+    new_todo
+    |> IO.inspect()
+  end
+  
+  
+  test "Test that we can update using ToDo.update/2" do
+    todo_list = to_do()
+    new_entry = %{id: 2, date: ~D[2021-10-06], title: "Easter", comment: "not really"}
+    new_todo = ToDo.update(todo_list, new_entry)
+    |> IO.inspect()
   end
 
 

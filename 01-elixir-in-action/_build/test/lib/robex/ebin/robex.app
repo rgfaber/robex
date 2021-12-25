@@ -11,6 +11,7 @@
                         'Elixir.Quadratic','Elixir.Robex',
                         'Elixir.Robex.Geometry','Elixir.Robex.Robot',
                         'Elixir.Streams','Elixir.Streams.Simple',
-                        'Elixir.Streams.SquareRoot','Elixir.ToDo']},
+                        'Elixir.Streams.SquareRoot','Elixir.ToDo',
+                        'Elixir.ToDoEntry']},
               {registered,[]},
               {vsn,"0.1.0"}]}.

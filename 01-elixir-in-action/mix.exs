@@ -5,7 +5,9 @@ defmodule Robex.MixProject do
     [
       app: :robex,
       version: "0.1.0",
-      dialyzer: [plt_add_deps: :transitive],
+      dialyzer: [
+        plt_add_deps: :transitive
+      ],
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
       deps: deps()

@@ -21,7 +21,7 @@ defmodule Fraction.Tests do
     Fraction.add(frac1, frac2)
     |> IO.inspect()
   end
-  
+
   test "Test that we can get the value of the addition" do
     frac1 = %Fraction{a: 84, b: 2}
     frac2 = %Fraction{a: 49, b: 7}
@@ -29,7 +29,7 @@ defmodule Fraction.Tests do
     |> Fraction.value()
     |> IO.inspect()
   end
-  
+
 
 
 end

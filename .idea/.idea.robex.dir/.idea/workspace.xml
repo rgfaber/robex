@@ -5,16 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea828a50-61f3-46ef-b6f9-94f9e1efbd3f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/to_do_entry.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/test/to_do_entry_test.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/robex/.mix/compile.app_tracer" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/robex/.mix/compile.app_tracer" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/robex/.mix/compile.elixir" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/robex/.mix/compile.elixir" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/robex/.mix/compile.test_stale" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/robex/.mix/compile.test_stale" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/robex/ebin/robex.app" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/robex/ebin/robex.app" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/01-elixir-in-action/lib/fraction.ex" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/fraction.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/lib/todo.ex" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/todo.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/mix.exs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/01-elixir-in-action/test/fraction_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/test/fraction_test.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/test/todo_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/test/todo_test.exs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Elixir Module" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -75,7 +89,7 @@
       <workItem from="1640200813840" duration="3789000" />
       <workItem from="1640205864097" duration="23330000" />
       <workItem from="1640267989682" duration="7610000" />
-      <workItem from="1640292508280" duration="32274000" />
+      <workItem from="1640292508280" duration="45881000" />
     </task>
     <servers />
   </component>
