@@ -1,7 +1,25 @@
 defmodule ToDo do
   defstruct auto_id: 1, entries: %{}
+  
+  defimpl String.Chars, for: ToDo do
+    def to_string(_), do: "#ToDo"
+  end
+  
+  defimpl Collectable, for: ToDo do
+    def into(original), do: {original, &into_callback/2}
+    def into_callback(todos, {:cont, entry}), do: ToDo.add_entry(todos, entry)
+    def into_callback(todos, :done), do: todos
+    def into_callback(todos, :halt), do: :ok
+  end
+  
+  def new(new_entries \\ []) do 
+    new_entries
+    |> Enum.reduce( 
+         %ToDo{}, &add_entry(&2, &1))
+#         fn entry, acc_list -> add_entry(acc_list, entry) end)  
+  end
 
-  def new(), do: %ToDo{}
+#  def new(), do: %ToDo{}
 
   def add_entry(list, entry) do
     # set the entry's id to the value stored in auto_id
@@ -16,9 +34,11 @@ defmodule ToDo do
 
   def entries(list, date) do
     list.entries
-    |> Stream.filter(fn {id, entry} -> entry.date == date end)
-      # We use Enum in order to let everything happen in 1 iteration over the filter result
-    |> Enum.map(fn {id, entry} -> entry end)
+    |> Stream.filter(fn {_, entry} -> entry.date == date end)
+      #    |> Map.map(fn {_, entry} -> entry end)
+      #      # We use Enum in order to let everything happen in 1 iteration over the filter result
+    |> Enum.to_list()
+    #    |> IO.inspect()
   end
 
   def update(list, id_to_update, updater_fun) do
@@ -32,10 +52,23 @@ defmodule ToDo do
         %ToDo{list | entries: new_entries}
     end
   end
-  
-  def update(list, %{}=new_entry) do
+
+
+  def update(list, %{} = new_entry) do
     update(list, new_entry.id, fn _ -> new_entry end)
   end
+
+  def delete(list, del_entry) do
+    list.entries
+    |> Stream.filter(fn {_, entry} -> entry.id != del_entry.id end)
+      #    |> Map.map( fn {_,entry} -> entry end)
+    |> Enum.to_list()
+    |> IO.inspect()
+    #    |> Stream.map(fn {_, entry} -> entry  end)
+
+  end
+  
+  
 
 
 
