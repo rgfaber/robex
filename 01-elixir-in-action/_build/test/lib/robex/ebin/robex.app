@@ -2,6 +2,7 @@
              [{applications,[kernel,stdlib,elixir,logger]},
               {description,"robex"},
               {modules,['Elixir.BigFile','Elixir.BigFile.LineLength',
+                        'Elixir.Calculator','Elixir.Calculator.Client',
                         'Elixir.Collectable.ToDo','Elixir.DataAbstractions',
                         'Elixir.DataAbstractions.DoW','Elixir.DbServer',
                         'Elixir.DbServer.Client','Elixir.Extraction',
@@ -14,6 +15,7 @@
                         'Elixir.Robex.Robot','Elixir.Streams',
                         'Elixir.Streams.Simple','Elixir.Streams.SquareRoot',
                         'Elixir.String.Chars.ToDo','Elixir.ToDo',
-                        'Elixir.ToDo.CsvImporter','Elixir.ToDoEntry']},
+                        'Elixir.ToDo.CsvImporter','Elixir.ToDoEntry',
+                        'Elixir.ToDoServer','Elixir.ToDoServer.Client']},
               {registered,[]},
               {vsn,"0.1.0"}]}.

@@ -75,21 +75,42 @@ defmodule ToDo.Tests do
 
   test "Test that we can build a ToDo list using new/1" do
     entries = [
-      %{date: ~D[2007-08-15], title: "Charles"}, 
+      %{date: ~D[2007-08-15], title: "Charles"},
       %{date: ~D[1987-01-01], title: "Joe"},
       %{date: ~D[1968-10-07], title: "Suzan"},
     ]
     todo_list = ToDo.new(entries)
-    todo_list 
+    todo_list
     |> IO.inspect()
     assert todo_list != nil
   end
-  
+
   test "Test that we can use ToDo as Collectable" do
-    todos = [%{date: ~D[2018-12-19], title: "Dentist"},
-    %{date: ~D[2018-12-20], title: "Shopping"},
-    %{date: ~D[2018-12-19], title: "Movies"}]
+    todos = [
+      %{date: ~D[2018-12-19], title: "Dentist"},
+      %{date: ~D[2018-12-20], title: "Shopping"},
+      %{date: ~D[2018-12-19], title: "Movies"}
+    ]
     for entry <- todos, into: ToDo.new(), do: entry
+  end
+
+end
+
+defmodule ToDoServer.Tests do
+  use ExUnit.Case
+  
+  doctest ToDoServer
+  
+  test "Test that we can start the ToDoServer" do
+    pid = ToDoServer.start("todos.csv")
+    assert pid != nil
+  end
+
+  test "Test if we can get entries" do
+    pid = ToDoServer.start("todos.csv")
+    result = ToDoServer.Client.query(pid, ~D[2018-12-19])
+    |> IO.inspect
+    assert result != nil
   end
 
 

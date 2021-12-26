@@ -1,16 +1,17 @@
 defmodule DbServer do
-    
+
   @moduledoc """
    This module contains a low-level implementation for  a DbServer
   """
-  
+
   @doc """
   Starts the server and calls the tail-iterative loop
   """
   def start() do
-    spawn(&loop/0)
+    connection = :rand.uniform(1000)
+    spawn(fn -> loop(connection) end)
   end
-  
+
   defmodule Client do
     @doc """
     Client method to run a query against the DbServer
@@ -18,7 +19,7 @@ defmodule DbServer do
     def query_async(server_pid, query_def) do
       send(server_pid, {:run_query, self(), query_def})
     end
-    
+
     @doc """
     Client method to retrieve the result from the query_async call
     times out after 5 seconds
@@ -31,19 +32,18 @@ defmodule DbServer do
       end
     end
   end
-  
-  defp loop() do
+
+  defp loop(connection) do
     receive do
-      {:run_query, caller_pid, query_def} -> 
-        send(caller_pid, {:query_result, run_query(query_def)}) 
+      {:run_query, caller_pid, query_def} ->
+        send(caller_pid, {:query_result, run_query(connection, query_def)})
     end
-    IO.puts(self)
-    loop()
+    loop(connection)
   end
-  
-  defp run_query(query_def) do
+
+  defp run_query(connection, query_def) do
     Process.sleep(2000)
-    "#{query_def} result"
+    %{connection: "#{connection}", result: "#{query_def}"}
   end
-  
+
 end

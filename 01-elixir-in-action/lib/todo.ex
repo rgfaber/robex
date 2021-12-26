@@ -1,25 +1,27 @@
 defmodule ToDo do
   defstruct auto_id: 1, entries: %{}
-  
+
   defimpl String.Chars, for: ToDo do
     def to_string(_), do: "#ToDo"
   end
-  
+
   defimpl Collectable, for: ToDo do
     def into(original), do: {original, &into_callback/2}
     def into_callback(todos, {:cont, entry}), do: ToDo.add_entry(todos, entry)
     def into_callback(todos, :done), do: todos
     def into_callback(todos, :halt), do: :ok
   end
-  
-  def new(new_entries \\ []) do 
+
+  def new(new_entries \\ []) do
     new_entries
-    |> Enum.reduce( 
-         %ToDo{}, &add_entry(&2, &1))
-#         fn entry, acc_list -> add_entry(acc_list, entry) end)  
+    |> Enum.reduce(
+         %ToDo{},
+         &add_entry(&2, &1)
+       )
+    #         fn entry, acc_list -> add_entry(acc_list, entry) end)  
   end
 
-#  def new(), do: %ToDo{}
+  #  def new(), do: %ToDo{}
 
   def add_entry(list, entry) do
     # set the entry's id to the value stored in auto_id
@@ -63,13 +65,43 @@ defmodule ToDo do
     |> Stream.filter(fn {_, entry} -> entry.id != del_entry.id end)
       #    |> Map.map( fn {_,entry} -> entry end)
     |> Enum.to_list()
-    |> IO.inspect()
     #    |> Stream.map(fn {_, entry} -> entry  end)
 
   end
-  
-  
-
-
-
 end
+
+defmodule ToDoServer do
+
+  def start(path) do
+    spawn(fn -> loop(ToDo.CsvImporter.read(path)) end)
+  end
+
+  defp loop(current_state) do
+    new_state =
+      receive do
+        message -> process_message(current_state, message)
+      end
+    loop(new_state)
+  end
+
+  defp process_message(state, {:query, requester_id, date}) do
+    send(requester_id, {:entries, ToDo.entries(state, date) })
+  end
+  
+end
+
+
+defmodule ToDoServer.Client do
+  
+  def query(pid, date) do
+    send(pid, {:query, self(), date})
+    receive do
+      {:entries, entries} -> entries
+      after 
+        5000 -> {:error,:timeout}
+    end
+  end
+  
+end
+
+
