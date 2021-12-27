@@ -5,7 +5,6 @@ defmodule ProcessPlayground do
     "Sleeper #{identifier} is done."
   end
 
-
   def spawn_sleeper(id) do
     caller = self()
     spawn(fn -> send(caller, {:query_result, ProcessPlayground.sleeper(id)}) end)
@@ -20,13 +19,5 @@ defmodule ProcessPlayground do
       5000 -> "No messages"
     end
   end
-
-
-
-
-
-
-
-
 
 end

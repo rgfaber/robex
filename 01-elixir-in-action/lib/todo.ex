@@ -33,6 +33,15 @@ defmodule ToDo do
     # Update the struct with new entries and augment auto_id (for next use)
     %ToDo{list | entries: new_entries, auto_id: list.auto_id + 1}
   end
+  
+  def entries(list, title) do
+    list.entries
+    |> Stream.filter(fn {_, entry} -> entry.title == title end)
+      #    |> Map.map(fn {_, entry} -> entry end)
+      #      # We use Enum in order to let everything happen in 1 iteration over the filter result
+    |> Enum.to_list()
+    #    |> IO.inspect()    
+  end
 
   def entries(list, date) do
     list.entries
@@ -63,10 +72,7 @@ defmodule ToDo do
   def delete(list, del_entry) do
     list.entries
     |> Stream.filter(fn {_, entry} -> entry.id != del_entry.id end)
-      #    |> Map.map( fn {_,entry} -> entry end)
     |> Enum.to_list()
-    #    |> Stream.map(fn {_, entry} -> entry  end)
-
   end
 end
 
@@ -79,29 +85,93 @@ defmodule ToDoServer do
   defp loop(current_state) do
     new_state =
       receive do
-        message -> process_message(current_state, message)
+        msg -> process_message(current_state, msg)
+        #        _ -> log(current_state, "catch all")
+        ##        _ -> current_state
       end
     loop(new_state)
   end
 
-  defp process_message(state, {:query, requester_id, date}) do
-    send(requester_id, {:entries, ToDo.entries(state, date) })
+  defp process_message(state, {:query_by_date, requester_id, date})  do
+    send(requester_id, {:entries, ToDo.entries(state, date)})
+    state
   end
-  
+
+  defp process_message(state, {:query_by_title, requester_id, title})  do
+    send(requester_id, {:entries, ToDo.entries(state, title)})
+    state
+  end
+
+
+  defp process_message(state, {:add_todo, requester_id, entry}) do
+    result = ToDo.add_entry(state, entry)
+    send(requester_id, {:entries, result})
+    result
+  end
+   
+
+  defp process_message(state, {_, requester_id, msg}),
+       do: send(requester_id, {:unknown, msg})
+
+  defp process_message(state, other),
+       do: log(state, other)
+
+  defp log(state, msg) do
+    IO.puts("logging: #{msg}")
+    Process.info(self, :messages)
+    |> IO.inspect()
+    state
+  end
+
+
 end
 
 
 defmodule ToDoServer.Client do
-  
-  def query(pid, date) do
-    send(pid, {:query, self(), date})
+
+  def query(pid, receiver_id, date) do
+    send(pid, {:query_by_date, receiver_id, date})
     receive do
       {:entries, entries} -> entries
-      after 
-        5000 -> {:error,:timeout}
+      _ -> nil
+    after
+      5000 -> {:error, :timeout}
     end
   end
-  
+
+  def query(pid, receiver_id, title) do
+    send(pid, {:query_by_title, receiver_id, title})
+    receive do
+      {:entries, entries} -> entries
+      _ -> nil
+    after
+      5000 -> {:error, :timeout}
+    end
+  end
+
+
+  def add_todo(pid, receiver_id, entry) do
+    send(pid, {:add_todo, receiver_id, entry})
+    receive do
+      {:entries, entries} -> entries
+      _ -> nil
+    after
+      5000 -> {:error, :timeout}
+    end
+  end
+
+  def del_todo(pid, receiver_id, item_id) do
+    send(pid, {:del_todo, receiver_id, item_id})
+    receive do
+      {:entries, entries} -> entries
+      _ -> nil
+    after
+      5000 -> {:error, :timeout}
+    end
+  end
+
+
+
 end
 
 
