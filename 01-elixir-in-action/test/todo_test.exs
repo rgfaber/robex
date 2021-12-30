@@ -143,7 +143,7 @@ defmodule ToDoServer.Tests do
     pid = ToDoServer.start("todos.csv")
     ToDoServer.Client.add_todo(pid, self(), %{date: ~D[2021-12-27], title: "Bad Karma"})
     ToDoServer.Client.add_todo(pid, self(), %{date: ~D[2021-11-11], title: "Polish independence"})
-    |> IO.inspect()    
+    |> IO.inspect()
     result = ToDoServer.Client.query(pid, self(), "Bad Karma")
              |> IO.inspect
     Process.info(pid, :message_queue_len)
@@ -163,13 +163,13 @@ defmodule ToDoServer.Tests do
     ToDoServer.Client.add_todo(pid, self(), %{date: ~D[2021-12-27], title: "Bad Karma"})
     ToDoServer.Client.add_todo(pid, self(), %{date: ~D[2021-11-11], title: "Polish independence"})
     ToDoServer.Client.query(pid, self(), "Bad Karma")
-    |> Enum.each(&(ToDoServer.Client.del_todo(pid, self(), &1 )))
+    |> Enum.each(&(ToDoServer.Client.del_todo(pid, self(), &1)))
     |> IO.inspect()
     Process.info(pid, :message_queue_len)
     |> IO.inspect()
   end
   
-  
+
 
 
 

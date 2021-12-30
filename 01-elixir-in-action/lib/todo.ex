@@ -33,7 +33,7 @@ defmodule ToDo do
     # Update the struct with new entries and augment auto_id (for next use)
     %ToDo{list | entries: new_entries, auto_id: list.auto_id + 1}
   end
-  
+
   def entries(list, title) do
     list.entries
     |> Stream.filter(fn {_, entry} -> entry.title == title end)
@@ -108,7 +108,7 @@ defmodule ToDoServer do
     send(requester_id, {:entries, result})
     result
   end
-   
+
 
   defp process_message(state, {_, requester_id, msg}),
        do: send(requester_id, {:unknown, msg})
