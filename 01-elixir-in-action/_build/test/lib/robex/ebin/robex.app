@@ -18,6 +18,7 @@
                         'Elixir.Streams.SquareRoot',
                         'Elixir.String.Chars.ToDo','Elixir.ToDo',
                         'Elixir.ToDo.CsvImporter','Elixir.ToDoEntry',
-                        'Elixir.ToDoServer','Elixir.ToDoServer.Client']},
+                        'Elixir.ToDoGenServer','Elixir.ToDoServer',
+                        'Elixir.ToDoServer.Client']},
               {registered,[]},
               {vsn,"0.1.0"}]}.
