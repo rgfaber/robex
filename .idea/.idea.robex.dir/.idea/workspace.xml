@@ -5,18 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea828a50-61f3-46ef-b6f9-94f9e1efbd3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/todo_genserver.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01-elixir-in-action/test/todo_genserver_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo-app.code-workspace" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/.formatter.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/bible.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/cache.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/csv_importer.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/item.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/list.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/server.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/mix.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/mix.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/test/test_helper.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/cache_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/csv_importer_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/item_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/list_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/todos.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/_build/dev/lib/robex/.mix/compile.elixir" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/dev/lib/robex/.mix/compile.elixir" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/_build/dev/lib/robex/.mix/compile.protocols" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/dev/lib/robex/.mix/compile.protocols" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/_build/dev/lib/robex/ebin/robex.app" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/dev/lib/robex/ebin/robex.app" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/robex/.mix/compile.elixir" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/robex/.mix/compile.elixir" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/robex/ebin/robex.app" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/_build/test/lib/robex/ebin/robex.app" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/lib/KeyValueStore.ex" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/key_value_store.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/lib/todo.ex" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/lib/todo.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/test/KeyValueStore_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/test/KeyValueStore_test.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01-elixir-in-action/test/todo_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/01-elixir-in-action/test/todo_test.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/00-tools/inst-elixir-tools.sh" beforeDir="false" afterPath="$PROJECT_DIR$/00-tools/inst-elixir-tools.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +106,9 @@
       <workItem from="1640866797624" duration="2269000" />
       <workItem from="1640943688046" duration="2842000" />
       <workItem from="1641286959279" duration="8729000" />
-      <workItem from="1641489857905" duration="341000" />
+      <workItem from="1641489857905" duration="12649000" />
+      <workItem from="1641547193403" duration="76000" />
+      <workItem from="1641548473684" duration="17999000" />
     </task>
     <servers />
   </component>
