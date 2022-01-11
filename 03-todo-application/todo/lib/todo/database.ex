@@ -1,5 +1,6 @@
 defmodule ToDo.Database do
   use GenServer
+  
 
   @doc """
   The Persistence Process for our ToDo WebServer
@@ -12,55 +13,43 @@ defmodule ToDo.Database do
     GenServer.start(__MODULE__, nil, name: __MODULE__)
   end
 
-  def store(key, data) do
-    GenServer.cast(__MODULE__, {:store, key, data})
+  def choose_worker(key) do
+    GenServer.call(__MODULE__,{:choose_worker, key})
   end
-
+  
   def get(key) do
-    GenServer.call(__MODULE__, {:get, key})
+    choose_worker(key)
+    |> ToDo.DatabaseWorker.get(key)
   end
-
-
+  
+  def store(key,data) do
+    choose_worker(key)
+    |> ToDo.DatabaseWorker.store(key, data)
+  end
+  
+  
   # Callback Methods
 
   def init(_) do
-    case File.mkdir_p!(@db_path) do
-      {:error, reason} -> IO.puts("Error creating directory! Reasoon: #{reason}}")
-                          {:error, reason}
-      _ -> {:ok, nil}
+    {:ok,  create_pool() }
+  end
+  
+  
+
+  def handle_call({:choose_worker, key}, _, state) do
+    worker =
+    state
+    |> Map.get(:erlang.phash2(key,3))
+    {:reply, worker, state}
+  end
+
+  def create_pool() do
+    for index <- 1..3, into: %{} do
+      {:ok, pid} = ToDo.DatabaseWorker.start(@db_path)
+      {index-1, pid}
     end
   end
 
-  def handle_call({:get, key}, caller, state) do
-    spawn(
-      fn ->
-        data = case file_name(key)
-                    |> File.read() do
-          {:ok, contents} -> :erlang.binary_to_term(contents)
-          _ -> nil
-        end
-        GenServer.reply(caller, data)
-      end
-    )
-    {:noreply, state}
-  end
-
-  def handle_cast({:store, key, data}, state) do
-    spawn(
-      fn ->
-        key
-        |> file_name
-        |> File.write!(:erlang.term_to_binary(data))
-      end
-    )
-    {:noreply, state}
-  end
-
-
-  ## Helper functions
-  defp file_name(key) do
-    Path.join(@db_path, to_string(key))
-  end
 
 
 

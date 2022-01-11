@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea828a50-61f3-46ef-b6f9-94f9e1efbd3f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/database_worker.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/database_worker_test.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/database.ex" beforeDir="false" afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/database.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-todo-application/todo/test/todo/cache_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/cache_test.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-todo-application/todo/test/todo/database_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/database_test.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-todo-application/todo/test/todo/server_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/server_test.exs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +63,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="language.elixir" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -94,7 +100,8 @@
       <workItem from="1641830115554" duration="86000" />
       <workItem from="1641830219598" duration="8000" />
       <workItem from="1641830690019" duration="2840000" />
-      <workItem from="1641834334977" duration="7177000" />
+      <workItem from="1641834334977" duration="13541000" />
+      <workItem from="1641933854556" duration="7855000" />
     </task>
     <servers />
   </component>

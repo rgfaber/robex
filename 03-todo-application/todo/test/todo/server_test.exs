@@ -5,9 +5,10 @@ defmodule ToDo.Server.Tests do
 
   @tag :ignore
   test "if we can start the ToDo.Server using start/1" do
-    {_, pid} = ToDo.Server.start("albums")
+    {_, _} = ToDo.Server.start("albums")
   end
 
+  @tag :ignore
   test "if we can retrieve the entries for :george, using /get_all" do
     {_, cache_id} = ToDo.TestHelper.start_beatles()
     george_pid = ToDo.Cache.get_process(cache_id, :george)

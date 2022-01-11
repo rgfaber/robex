@@ -3,6 +3,8 @@
   <component name="UserContentModel">
     <attachedFolders />
     <explicitIncludes />
-    <explicitExcludes />
+    <explicitExcludes>
+      <Path>03-todo-application/todo/lib/todo/database.ex</Path>
+    </explicitExcludes>
   </component>
 </project>

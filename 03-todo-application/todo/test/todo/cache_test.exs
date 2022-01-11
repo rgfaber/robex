@@ -35,12 +35,12 @@ defmodule ToDo.Cache.Tests do
   test "Test if we can add an entry to all ToDo Lists using broadcast/3" do
     {_, cache_id} = ToDo.TestHelper.start_beatles()
     ToDo.Cache.fetch_all_servers(cache_id)
-    |> Enum.each(fn {name, pid} -> ToDo.Server.put(pid, ~D[1958-08-02], "Let's Rock!") end)
+    |> Enum.each(fn {_name, pid} -> ToDo.Server.put(pid, ~D[1958-08-02], "Let's Rock!") end)
 
     ToDo.Cache.fetch_all_servers(cache_id)
-    |> Stream.filter(fn {name, pid} -> name != :pete  end)
+    |> Stream.filter(fn {name, _pid} -> name != :pete  end)
     |> Enum.each(
-         fn {name, pid} ->
+         fn {_name, pid} ->
            ToDo.Server.put(pid, ~D[1962-12-15], "Go to Hamburg!")
            ToDo.Server.put(pid, ~D[1963-02-20], "Please Please Me!")
          end
