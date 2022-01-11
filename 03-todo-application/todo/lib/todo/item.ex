@@ -1,6 +1,6 @@
 defmodule ToDo.Item do
-  defstruct id: 1, 
-            date: ~D[1970-01-01], 
+  defstruct id: 1,
+            date: ~D[1970-01-01],
             title: "New ToDo Item"
 
   defimpl String.Chars, for: ToDo.Item do
@@ -9,11 +9,11 @@ defmodule ToDo.Item do
     end
   end
 
-            
+
   def new(id, date, title) do
     %ToDo.Item{id: id, date: date, title: title}
   end
-  
+
 end
 
 

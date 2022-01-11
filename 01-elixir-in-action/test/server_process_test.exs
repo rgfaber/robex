@@ -8,7 +8,7 @@ defmodule ServerProcess.Tests do
 
   test "Test that we can start the ServerProcess" do
     pid = ServerProcess.start(KVStore)
-    |> IO.inspect()
+          |> IO.inspect()
     assert pid != nil
   end
 
@@ -22,7 +22,7 @@ defmodule ServerProcess.Tests do
     ServerProcess.call(pid, {:get, "name"})
     |> IO.inspect()
   end
-  
+
   test "Test if we can get/put using the interface functions start/0, get/2, put/3" do
     pid = KVStore.start()
     KVStore.put(pid, :name, "Raf")
@@ -32,12 +32,12 @@ defmodule ServerProcess.Tests do
     KVStore.get(pid, :name)
     |> IO.inspect()
     KVStore.get(pid, :address)
-    |> IO.inspect()    
+    |> IO.inspect()
   end
-  
-  
-  
-  
+
+
+
+
 
 end
 

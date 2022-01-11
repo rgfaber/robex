@@ -1,8 +1,8 @@
 defmodule ToDo.List.Tests do
   use ExUnit.Case, async: true
-  
+
   doctest ToDo.List
-  
+
   @tag :ignore
   test "Test if we can create a ToDo.List" do
     ToDo.List.new()
@@ -15,8 +15,8 @@ defmodule ToDo.List.Tests do
     |> ToDo.List.add_entry(%ToDo.Item{date: ~D[2022-01-06], title: "Epiphany"})
     |> IO.inspect()
   end
-  
-  
-  
-  
+
+
+
+
 end

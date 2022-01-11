@@ -52,7 +52,7 @@ defmodule ToDo.List do
     list.entries
     |> Enum.to_list()
   end
-  
+
 
   def update(list, id_to_update, updater_fun) do
     case Map.fetch(list.entries, id_to_update) do
