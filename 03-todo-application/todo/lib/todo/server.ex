@@ -3,28 +3,42 @@ defmodule ToDo.Server do
   
   ## Callback Methods
   @impl GenServer
-  def init(_) do
-    {:ok, ToDo.List.new() }
+  def init(list_name) do
+    send( self(), :init_state)
+    {:ok, {list_name, nil }}
   end
+  
+  @impl GenServer
+  def handle_info(:init_state, state) do
+    {list_name, _} = state
+    {:noreply, {list_name, ToDo.Database.get(list_name) || ToDo.List.new()} }
+  end
+
 
   @impl GenServer
   def handle_cast({:add_entry, new_entry}, state) do
-    new_state =
-    state
+    {list_name, entries} = state
+    new_entries =
+    entries
     |> ToDo.List.add_entry(new_entry)
-    {:noreply, new_state}
+    ToDo.Database.store(list_name, new_entries)
+    {:noreply, {list_name, new_entries}}
   end
   
   @impl GenServer
   def handle_call({:entries_by_date, date}, _caller, state)  do
-    answer = state 
+    {name, _} = state
+    {_, entries} = 
+    answer = ToDo.Database.get(name)
              |> ToDo.List.entries_by_date(date)
-    {:reply, answer,  state}
+    {:reply, answer, state}
   end
 
   @impl GenServer
   def handle_call({:entries_by_title, title}, _caller, state)  do
-    answer = state
+    {name, _} = state
+    
+    answer = ToDo.Database.get(name)            
              |> ToDo.List.entries_by_title(title)
     {:reply, answer,  state}
   end
@@ -32,7 +46,8 @@ defmodule ToDo.Server do
 
   @impl GenServer
   def handle_call({:entries_all}, _caller, state) do
-    answer = state
+    {name, list} = state
+    answer = ToDo.Database.get(name)
              |> ToDo.List.entries()
     {:reply, answer, state}
   end
@@ -41,8 +56,8 @@ defmodule ToDo.Server do
   
 
   ## Interface functions
-  def start() do
-    GenServer.start(__MODULE__, nil)
+  def start(list_name) do
+    GenServer.start(__MODULE__, list_name)
   end
   
   

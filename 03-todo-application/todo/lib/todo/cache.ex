@@ -1,9 +1,27 @@
 defmodule ToDo.Cache do
   use GenServer
-  
+
+
+  ## Interfaces Methods
+  def start() do
+    GenServer.start(__MODULE__, nil)
+  end
+
+  def get_process(cache_id, todo_list_name) do
+    GenServer.call(cache_id, {:server_process, todo_list_name})
+  end
+
+  def fetch_all_servers(cache_id) do
+    GenServer.call(cache_id, {:all_servers})
+  end
+
+
+
+
   ## Callback Methods
   @impl GenServer
   def init(_) do
+    ToDo.Database.start()
     {:ok, %{}}
   end
   
@@ -15,7 +33,7 @@ defmodule ToDo.Cache do
           todo_server, 
           todo_servers}
         
-      :error ->  {:ok, new_server} = ToDo.Server.start()
+      :error ->  {:ok, new_server} = ToDo.Server.start(todo_list_name)
         {:reply, 
           new_server,
           todo_servers 
@@ -29,18 +47,6 @@ defmodule ToDo.Cache do
   end
   
   
-  ## Interfaces Methods
-  def start() do
-    GenServer.start(__MODULE__, nil)
-  end
-    
-  def get_process(cache_id, todo_list_name) do
-    GenServer.call(cache_id, {:server_process, todo_list_name})
-  end
-  
-  def fetch_all_servers(cache_id) do
-    GenServer.call(cache_id, {:all_servers})
-  end
   
   
   

@@ -5,27 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea828a50-61f3-46ef-b6f9-94f9e1efbd3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo-app.code-workspace" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/.formatter.exs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/bible.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/.keep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/cache.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/csv_importer.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/item.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/list.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/server.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/mix.exs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/mix.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/test/test_helper.exs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/cache_test.exs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/csv_importer_test.exs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/item_test.exs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/list_test.exs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/todos.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/db/1963-05-12" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/db/albums" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/db/default" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/db/george" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/db/john" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/db/paul" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/db/pete" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/db/ringo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/database.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/test_helper.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/database_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/server_test.exs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/00-tools/inst-elixir-tools.sh" beforeDir="false" afterPath="$PROJECT_DIR$/00-tools/inst-elixir-tools.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/cache.ex" beforeDir="false" afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/cache.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/server.ex" beforeDir="false" afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/server.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-todo-application/todo/test/todo/cache_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/cache_test.exs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +71,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Elixir" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -108,7 +103,12 @@
       <workItem from="1641286959279" duration="8729000" />
       <workItem from="1641489857905" duration="12649000" />
       <workItem from="1641547193403" duration="76000" />
-      <workItem from="1641548473684" duration="17999000" />
+      <workItem from="1641548473684" duration="28575000" />
+      <workItem from="1641813930316" duration="96000" />
+      <workItem from="1641830115554" duration="86000" />
+      <workItem from="1641830219598" duration="8000" />
+      <workItem from="1641830690019" duration="2840000" />
+      <workItem from="1641834334977" duration="5653000" />
     </task>
     <servers />
   </component>

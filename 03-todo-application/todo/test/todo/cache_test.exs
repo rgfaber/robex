@@ -25,26 +25,15 @@ defmodule ToDo.Cache.Tests do
   @tag :ignore
   test "Test if we can get a list of all the ToDo.Servers" do
     # First, we start a new ToDo.Cache and we fill it with the usual suspects
-    {_, cache_id} = start_beatles
+    {_, cache_id} = ToDo.TestHelper.start_beatles()
     ToDo.Cache.fetch_all_servers(cache_id)
     |> IO.inspect()
   end
 
-  # Can we create a Helper Function to start the usual suspects? Yes we can!
-  defp start_beatles() do
-    {_,cache_id} = ToDo.Cache.start()
-    ToDo.Cache.get_process(cache_id, :john)
-    ToDo.Cache.get_process(cache_id, :george)
-    ToDo.Cache.get_process(cache_id, :ringo)
-    ToDo.Cache.get_process(cache_id, :paul)
-    ToDo.Cache.get_process(cache_id, :pete)
-    IO.puts("\n\n The Beatles have started!")
-    {:beatles, cache_id}
-  end
   
   @tag :ignore
   test "Test if we can add an entry to all ToDo Lists using broadcast/3" do
-    {_, cache_id} = start_beatles
+    {_, cache_id} = ToDo.TestHelper.start_beatles()
     ToDo.Cache.fetch_all_servers(cache_id)
     |> Enum.each(fn {name,pid} -> ToDo.Server.put(pid, ~D[1958-08-02], "Let's Rock!" ) end)
 
@@ -58,22 +47,28 @@ defmodule ToDo.Cache.Tests do
     ringo_pid = ToDo.Cache.get_process(cache_id, :ringo)
     ToDo.Server.get_all(ringo_pid)
     |> IO.inspect()
-   
+
     pete_pid = ToDo.Cache.get_process(cache_id, :pete)
     ToDo.Server.get_all(pete_pid)
     |> IO.inspect()
   end
 
-  @tag :ignore
-  test "if we can start 100_000 ToDo Servers" do
-    :erlang.system_info(:process_count)
-    |> IO.inspect()
-    {_, cache_id} = ToDo.Cache.start
-    1..100_000
-    |>  Enum.each(&ToDo.Cache.get_process(cache_id, "todo-list ##{&1}"))
-    :erlang.system_info(:process_count)
-    |> IO.inspect()
-  end
+  
+
+#  @tag :ignore
+#  test "if we can start 100_000 ToDo Servers" do
+#    :erlang.system_info(:process_count)
+#    |> IO.inspect()
+#    {_, cache_id} = ToDo.Cache.start
+#    1..100_000
+#    |>  Enum.each(&ToDo.Cache.get_process(cache_id, "todo-list ##{&1}"))
+#    :erlang.system_info(:process_count)
+#    |> IO.inspect()
+#  end
+
+
+
+
   
   
   
