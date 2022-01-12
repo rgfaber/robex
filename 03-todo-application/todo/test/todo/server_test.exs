@@ -10,8 +10,8 @@ defmodule ToDo.Server.Tests do
 
   @tag :ignore
   test "if we can retrieve the entries for :george, using /get_all" do
-    {_, cache_id} = ToDo.TestHelper.start_beatles()
-    george_pid = ToDo.Cache.get_process(cache_id, :george)
+    ToDo.TestHelper.start_beatles()
+    george_pid = ToDo.Cache.get_process(:george)
                  |> IO.inspect()
     ToDo.Server.get_all(george_pid)
     |> IO.inspect()

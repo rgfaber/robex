@@ -56,8 +56,9 @@ defmodule ToDo.Server do
 
 
   ## Interface functions
-  def start(list_name) do
-    GenServer.start(__MODULE__, list_name)
+  def start_link(list_name) do
+    IO.puts("Starting ToDo.Server for #{list_name}")
+    GenServer.start_link(__MODULE__, list_name)
   end
 
 

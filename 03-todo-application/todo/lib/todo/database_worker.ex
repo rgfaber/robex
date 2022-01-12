@@ -6,8 +6,9 @@ defmodule ToDo.DatabaseWorker do
   """
 
   # Interface Methods
-  def start(folder) do
-    GenServer.start(__MODULE__, folder)
+  def start_link(folder) do
+    IO.puts("Starting the ToDo.DatabaseWorker")
+    GenServer.start_link(__MODULE__, folder)
   end
 
   def store(worker, key, data) do
@@ -46,11 +47,11 @@ defmodule ToDo.DatabaseWorker do
   def handle_cast({:store, key, data}, folder) do
     spawn(
       fn ->
-        file_name(folder,key)
+        file_name(folder, key)
         |> File.write!(:erlang.term_to_binary(data))
       end
     )
-    {:noreply, folder}   
+    {:noreply, folder}
   end
 
   ## Helper functions

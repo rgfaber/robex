@@ -3,16 +3,21 @@ defmodule ToDo.Cache do
 
 
   ## Interfaces Methods
-  def start() do
-    GenServer.start(__MODULE__, nil)
+  def start_link(_) do
+    IO.puts("Starting the ToDo.Cache")
+    GenServer.start_link(__MODULE__, nil, name: __MODULE__)
   end
 
-  def get_process(cache_id, todo_list_name) do
-    GenServer.call(cache_id, {:server_process, todo_list_name})
+  def get_process(todo_list_name) do
+    GenServer.call(__MODULE__, {:server_process, todo_list_name})
   end
 
-  def fetch_all_servers(cache_id) do
-    GenServer.call(cache_id, {:all_servers})
+  def fetch_all_servers() do
+    GenServer.call(__MODULE__, {:all_servers})
+  end
+
+  def child_spec(args) do
+    %{id: ToDo.Cache, start: {ToDo.Cache, :start_link, [args]}}
   end
 
 
@@ -21,7 +26,7 @@ defmodule ToDo.Cache do
   ## Callback Methods
   @impl GenServer
   def init(_) do
-    ToDo.Database.start()
+    ToDo.Database.start_link()
     {:ok, %{}}
   end
 
@@ -49,6 +54,8 @@ defmodule ToDo.Cache do
   def handle_call({:all_servers}, _, todo_servers) do
     {:reply, todo_servers, todo_servers}
   end
+  
+    
 
 
 
