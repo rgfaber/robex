@@ -1,29 +1,53 @@
-defmodule ToDo.Cache do
+defmodule ToDo.CacheSupervisor do
   use GenServer
 
 
   ## Interfaces Methods
-  def start_link(_) do
+  def start_link() do
     IO.puts("Starting the ToDo.Cache")
-    GenServer.start_link(__MODULE__, nil, name: __MODULE__)
+    DynamicSupervisor.start_link(
+      name: __MODULE__, 
+      strategy: :one_for_one
+    )
+  end
+  
+  def server_process(todo_list_name) do
+    case start_child(todo_list_name) do
+      {:ok, pid} -> pid
+      {:error, {:already_started, pid}} -> pid
+    end
   end
 
-  def get_process(todo_list_name) do
-    GenServer.call(__MODULE__, {:server_process, todo_list_name})
+  defp start_child(todo_list_name) do
+    DynamicSupervisor.start_child(
+      __MODULE__,
+      {ToDo.Server, todo_list_name})
   end
+
+
+  def child_spec(_args) do
+    %{
+      id: __MODULE__,
+      start: {__MODULE__, :start_link, []},
+      type: :supervisor
+    }
+  end
+
+  
+  
 
   def fetch_all_servers() do
     GenServer.call(__MODULE__, {:all_servers})
   end
 
-#  def child_spec(args) do
-#    %{id: ToDo.Cache, start: {ToDo.Cache, :start_link, [args]}}
-#  end
-
+    
 
 
 
   ## Callback Methods
+  
+
+
   @impl GenServer
   def init(_) do
     {:ok, %{}}
@@ -53,8 +77,8 @@ defmodule ToDo.Cache do
   def handle_call({:all_servers}, _, todo_servers) do
     {:reply, todo_servers, todo_servers}
   end
-  
-    
+
+
 
 
 

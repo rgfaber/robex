@@ -1,15 +1,15 @@
 defmodule ToDo.Database do
   use GenServer
 
-
   @doc """
   The Persistence Process for our ToDo WebServer
   """
 
   @db_path "./db"
-
+  @db_pool_size 3
+  
   # Interface Methods
-  def start_link() do
+  def start_link(_) do
     IO.puts("Starting the ToDo.Database")
     GenServer.start_link(__MODULE__, nil, name: __MODULE__)
   end
@@ -35,8 +35,6 @@ defmodule ToDo.Database do
     {:ok, create_pool()}
   end
 
-
-
   def handle_call({:choose_worker, key}, _, state) do
     worker =
       state
@@ -46,7 +44,7 @@ defmodule ToDo.Database do
 
   def create_pool() do
     for index <- 1..3, into: %{} do
-      {:ok, pid} = ToDo.DatabaseWorker.start_link(@db_path)
+      {:ok, pid} = ToDo.DatabaseWorker.start_link({@db_path,index})
       {index - 1, pid}
     end
   end

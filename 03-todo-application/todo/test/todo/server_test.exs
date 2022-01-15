@@ -5,7 +5,7 @@ defmodule ToDo.Server.Tests do
 
   @tag :ignore
   test "if we can start the ToDo.Server using start/1" do
-    {_, _} = ToDo.Server.start("albums")
+    {_, _} = ToDo.Server.start_link("albums")
   end
 
   @tag :ignore

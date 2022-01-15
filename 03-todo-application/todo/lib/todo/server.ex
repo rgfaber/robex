@@ -1,5 +1,37 @@
 defmodule ToDo.Server do
-  use GenServer
+  use GenServer, restart: :temporary
+
+
+  ## Interface functions
+
+  defp via_tuple(list_name) do
+    ToDo.ProcessRegistry.via_tuple({__MODULE__, list_name})
+  end
+
+
+  def start_link(list_name) do
+    IO.puts("Starting ToDo.Server for #{list_name}")
+    GenServer.start_link(__MODULE__, list_name, name: via_tuple(list_name))
+  end
+
+  def get_by_title(server, title) do
+    GenServer.call(server, {:entries_by_title, title})
+  end
+
+  def get_by_date(server, date)  do
+    GenServer.call(server, {:entries_by_date, date})
+  end
+
+  def get_all(server)  do
+    GenServer.call(server, {:entries_all})
+  end
+
+  def put(server, key, value) do
+    GenServer.cast(server, {:add_entry, %{date: key, title: value}})
+  end
+
+
+
 
   ## Callback Methods
   @impl GenServer
@@ -54,30 +86,6 @@ defmodule ToDo.Server do
 
 
 
-
-  ## Interface functions
-  def start_link(list_name) do
-    IO.puts("Starting ToDo.Server for #{list_name}")
-    GenServer.start_link(__MODULE__, list_name)
-  end
-
-
-  def get_by_title(server, title) do
-    GenServer.call(server, {:entries_by_title, title})
-  end
-
-  def get_by_date(server, date)  do
-    GenServer.call(server, {:entries_by_date, date})
-  end
-
-  def get_all(server)  do
-    GenServer.call(server, {:entries_all})
-  end
-
-  def put(server, key, value) do
-    GenServer.cast(server, {:add_entry, %{date: key, title: value}})
-    |> IO.inspect()
-  end
 
 
 

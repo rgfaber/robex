@@ -9,7 +9,12 @@ defmodule ToDo.System do
   
   # Callback
   def init(_) do
-    Supervisor.init([ToDo.Cache], strategy: :one_for_one)
+    Supervisor.init(
+      [
+        ToDo.ProcessRegistry,
+        ToDo.DbSupervisor,
+        ToDo.CacheSupervisor,
+      ], strategy: :one_for_one)
   end
   
 end

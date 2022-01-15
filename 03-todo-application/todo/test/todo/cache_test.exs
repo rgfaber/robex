@@ -64,20 +64,20 @@ defmodule ToDo.Cache.Tests do
 
   @tag :ignore
   test "if the Supervisor can restart the ToDo.Cache" do
-    {_, sup_id} = start_supervisor()
+    start_supervisor()
     cache_pid = Process.whereis(ToDo.Cache)
     IO.puts("Killing ToDo.Cache #{inspect(cache_pid)}")
     Process.exit(cache_pid, :kill)
     Process.sleep(1000)
-    cache_pid = Process.whereis(ToDo.Cache)
-    george = ToDo.Cache.get_process(:george)
+
+    ToDo.Cache.get_process(:george)
              |> IO.inspect()
   end
 
   @tag :ignore
   test "if we can get :george's process" do
     start_supervisor()
-    george = ToDo.Cache.get_process(:george)
+    ToDo.Cache.get_process(:george)
              |> IO.inspect()
   end
 

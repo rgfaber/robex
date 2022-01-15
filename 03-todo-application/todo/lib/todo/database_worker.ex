@@ -6,17 +6,23 @@ defmodule ToDo.DatabaseWorker do
   """
 
   # Interface Methods
-  def start_link(folder) do
-    IO.puts("Starting the ToDo.DatabaseWorker")
-    GenServer.start_link(__MODULE__, folder)
+  def start_link({folder, worker_id}) do
+    IO.puts("Starting the ToDo.DatabaseWorker #{worker_id}")
+    GenServer.start_link(__MODULE__, 
+      folder, 
+      name: via_tuple(worker_id))
+  end
+  
+  defp via_tuple(worker_id) do
+    ToDo.ProcessRegistry.via_tuple({__MODULE__, worker_id})
   end
 
-  def store(worker, key, data) do
-    GenServer.cast(worker, {:store, key, data})
+  def store(worker_id, key, data) do
+    GenServer.cast(via_tuple(worker_id), {:store, key, data})
   end
 
-  def get(worker, key) do
-    GenServer.call(worker, {:get, key})
+  def get(worker_id, key) do
+    GenServer.call(via_tuple(worker_id), {:get, key})
   end
 
 
@@ -36,7 +42,7 @@ defmodule ToDo.DatabaseWorker do
         data = case file_name(folder, key)
                     |> File.read() do
           {:ok, contents} -> :erlang.binary_to_term(contents)
-          _ -> nil
+          {:error, :enoent} -> nil
         end
         GenServer.reply(caller, data)
       end
