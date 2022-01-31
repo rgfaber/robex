@@ -2,6 +2,7 @@ defmodule ToDo.Server do
   use GenServer, restart: :temporary
 
 
+  @expiry_idle_timeout :timer.seconds(10)
   ## Interface functions
 
   defp via_tuple(list_name) do
@@ -35,15 +36,30 @@ defmodule ToDo.Server do
 
   ## Callback Methods
   @impl GenServer
-  def init(list_name) do
-    send(self(), :init_state)
-    {:ok, {list_name, nil}}
+  def init(name) do
+    {
+      :ok,
+      {name, ToDo.DbSupervisor.get(name) || Todo.List.new()},
+      @expiry_idle_timeout
+    }
   end
+
 
   @impl GenServer
   def handle_info(:init_state, state) do
     {list_name, _} = state
-    {:noreply, {list_name, ToDo.Database.get(list_name) || ToDo.List.new()}}
+    {
+      :noreply, 
+      {list_name, ToDo.DbSupervisor.get(list_name) || ToDo.List.new()}, 
+      @expiry_idle_timeout
+    }
+  end
+  
+  
+  @impl GenServer
+  def handle_info(:timeout, {name, todo_list}) do
+    IO.puts("Stopping ToDo.Server for #{name}")
+    {:stop, :normal, {name, todo_list}}
   end
 
 
@@ -53,35 +69,53 @@ defmodule ToDo.Server do
     new_entries =
       entries
       |> ToDo.List.add_entry(new_entry)
-    ToDo.Database.store(list_name, new_entries)
-    {:noreply, {list_name, new_entries}}
+    ToDo.DbSupervisor.store(list_name, new_entries)
+    {
+      :noreply, 
+      {list_name, new_entries}, 
+      @expiry_idle_timeout
+    }
   end
 
   @impl GenServer
   def handle_call({:entries_by_date, date}, _caller, state)  do
     {name, _} = state
     {_, entries} =
-      answer = ToDo.Database.get(name)
+      answer = ToDo.DbSupervisor.get(name)
                |> ToDo.List.entries_by_date(date)
-    {:reply, answer, state}
+    {
+      :reply, 
+      answer, 
+      state, 
+      @expiry_idle_timeout
+    }
   end
 
   @impl GenServer
   def handle_call({:entries_by_title, title}, _caller, state)  do
     {name, _} = state
-
-    answer = ToDo.Database.get(name)
+    answer = ToDo.DbSupervisor.get(name)
              |> ToDo.List.entries_by_title(title)
-    {:reply, answer, state}
+    {
+      :reply, 
+      answer, 
+      state,
+      @expiry_idle_timeout
+    }
   end
 
 
   @impl GenServer
   def handle_call({:entries_all}, _caller, state) do
     {name, list} = state
-    answer = ToDo.Database.get(name)
+    answer = ToDo.DbSupervisor.get(name)
              |> ToDo.List.entries()
-    {:reply, answer, state}
+    {
+      :reply, 
+      answer, 
+      state,
+      @expiry_idle_timeout
+    }
   end
 
 

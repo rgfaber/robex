@@ -5,7 +5,7 @@ defmodule ToDo.DbSupervisor do
   """
 
   @db_path "./db"
-  @db_pool_size 10000
+  @db_pool_size 5
 
   # Interface Methods
   def start_link() do

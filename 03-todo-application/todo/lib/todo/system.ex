@@ -11,9 +11,10 @@ defmodule ToDo.System do
   def init(_) do
     Supervisor.init(
       [
+        ToDo.Metrics,
         ToDo.ProcessRegistry,
         ToDo.DbSupervisor,
-        ToDo.CacheSupervisor,
+        ToDo.CacheSupervisor
       ], strategy: :one_for_one)
   end
   

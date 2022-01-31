@@ -8,21 +8,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea828a50-61f3-46ef-b6f9-94f9e1efbd3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/cache_supervisor.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/db_supervisor.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/process_registry.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/db_supervisor_test.exs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/process_registry_test.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/keyvalue.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/metrics.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/metrics_test.exs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.robex.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/cache.ex" beforeDir="false" afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/cache.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/database.ex" beforeDir="false" afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/database.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/database_worker.ex" beforeDir="false" afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/database_worker.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/robex.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/robex.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/db_supervisor.ex" beforeDir="false" afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/db_supervisor.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/server.ex" beforeDir="false" afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/server.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/system.ex" beforeDir="false" afterPath="$PROJECT_DIR$/03-todo-application/todo/lib/todo/system.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-todo-application/todo/test/todo/cache_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/cache_test.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-todo-application/todo/test/todo/database_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/database_test.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-todo-application/todo/test/todo/database_worker_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/database_worker_test.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-todo-application/todo/test/todo/server_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/server_test.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-todo-application/todo/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/03-todo-application/todo/mix.exs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/03-todo-application/todo/test/todo/system_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/03-todo-application/todo/test/todo/system_test.exs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,12 +64,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="XThreadsFramesViewSplitterKey" value="0.4873016" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.46190476" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -87,6 +81,11 @@
       <module-filters inherit-application-module-filters="true" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Elixir Mix ExUnit.Mix ExUnit todo test/todo/system_test.exs" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -126,7 +125,11 @@
       <workItem from="1641933854556" duration="14106000" />
       <workItem from="1641990518897" duration="3763000" />
       <workItem from="1642011690859" duration="18263000" />
-      <workItem from="1642169144575" duration="6356000" />
+      <workItem from="1642169144575" duration="13903000" />
+      <workItem from="1642274700389" duration="1860000" />
+      <workItem from="1642332216046" duration="3744000" />
+      <workItem from="1643057231076" duration="8040000" />
+      <workItem from="1643659326223" duration="22000" />
     </task>
     <servers />
   </component>
@@ -150,6 +153,17 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="ElixirLineBreakpoint">
+          <url>file://$PROJECT_DIR$/03-todo-application/todo/lib/todo/system.ex</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
