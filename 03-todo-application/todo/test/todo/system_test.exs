@@ -67,9 +67,15 @@ defmodule ToDo.System.Tests do
     queries
     |> Enum.map(&Task.async(fn -> run_query.("async ..Query #{&1}") end))
     |> Enum.map(&Task.await/1)
-    
+  end
 
- 
+  test "if we can create and fill a ETS table" do
+    IO.puts("Creating table :beatles_albums")
+    ets = :ets.new(:beatles_albums, [:public, :bag])
+    :ets.insert(ets, {:please_please_me, ~D[1962-02-01]} )
+    :ets.insert(ets, {:with_the_beatles, ~D[1963-02-01]} )
+    res = :ets.lookup(ets, :with_the_beatles)
+    IO.inspect(res)
   end
   
   

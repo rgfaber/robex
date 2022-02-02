@@ -1,46 +1,23 @@
 defmodule KeyValue do
   use GenServer
 
-  ## Interface functions
-  def start(state) do
-    GenServer.start(__MODULE__, state)
-  end
-
-  def start(state, name) do
-    GenServer.start(__MODULE__, state, name: name)
-  end
-
-
-  def get(key) do
-    GenServer.call(__MODULE__, {:get, key})
+  def start_link do
+    GenServer.start_link(__MODULE__, [], name: __MODULE__)
   end
 
   def put(key, value) do
     GenServer.cast(__MODULE__, {:put, key, value})
   end
-
-  ## Callback functions
-  @impl GenServer
+  def get(key) do
+    GenServer.call(__MODULE__, {:get, key})
+  end
   def init(_) do
-    :timer.send_interval(5000, :cleanup)
     {:ok, %{}}
   end
-
-  @impl GenServer
-  def handle_call({:get, key}, _, state) do
-    {:reply, Map.get(state, key), state}
+  def handle_cast({:put, key, value}, store) do
+    {:noreply, Map.put(store, key, value)}
   end
-
-  @impl GenServer
-  def handle_cast({:put, key, value}, state) do
-    {:noreply, Map.put(state, key, value)}
+  def handle_call({:get, key}, _, store) do
+    {:reply, Map.get(store, key), store}
   end
-
-  @impl GenServer
-  def handle_info(:cleanup, state) do
-    IO.puts("Cleaning up KeyValue...")
-    {:noreply, state}
-  end
-
-
 end
