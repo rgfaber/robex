@@ -1,0 +1,12 @@
+GET http://localhost:5454/all?list=releases
+Accept: application/json
+
+###
+
+
+##
+GET http://localhost:5454/by_date?list=releases&date=1963-01-30
+
+###
+POST http://localhost:5454/add_entry?list=releases&date=1966-04-17&title=Revolver
+
